@@ -5,7 +5,7 @@ include 'config.php';
 $db = new config();
 
 $sql = "DELETE FROM penduduk WHERE nik={$nik}";
-$query = mysqli_query($koneksi, $sql);
+$query = $db->aksiQuery($sql);
 if($query){
     header('Location:index.php');
 }else{
