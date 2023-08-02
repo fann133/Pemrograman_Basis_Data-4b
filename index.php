@@ -111,10 +111,10 @@
     <tr>
         <th colspan="4" class= "text-center">Total Data</th>
         <th colspan="3" class="text-center" >
-            <span class="text-black"><?php echo count($hasil) ?>
-        </th>
-    </tr>
-</table>
+            <span><?php echo count($hasil) ?>
+            </th>
+          </tr>
+        </table>
       </div>
     </div>
   </div>

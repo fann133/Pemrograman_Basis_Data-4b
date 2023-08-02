@@ -1,20 +1,27 @@
 <?php
-$nik = $_GET['id'];
-$nama = $_POST ['Nama'];
-$tempat = $_POST ['Tempat'];
-$tanggal = $_POST ['Tanggal'];
+    $nik = $_GET['id'];
 
-include 'config.php';
-$db = new config();
+    include 'config.php';
+    $db = new config();
 
-$sql = "UPDATE penduduk  SET nama='$nama',tempat_lahir='$tempat',tanggal_lahir='$tanggal' WHERE nik={$nik}";
-$query = $db->aksiQuery($sql);
-if($query){
-    header('Location:index.php');
-}else{
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // Proses form disubmit, simpan data ke database
+        $nama = $_POST['nama'];
+        $tempat_lahir = $_POST['tempat_lahir'];
+        $tanggal_lahir = $_POST['tanggal_lahir'];
+        $jenis_kelamin = $_POST['jenis_kelamin'];
+        $agama = $_POST['agama'];
 
-    die("data gagal diubah");
-}
+        // Lakukan query untuk menyimpan data ke database
+        $sql = "UPDATE penduduk SET nama='$nama', tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', jenis_kelamin='$jenis_kelamin', agama='$agama' WHERE nik='$nik'";
+        $db->execute($sql);
 
-
-?>
+        // Redirect ke halaman index.php setelah berhasil menyimpan data
+        header("Location: index.php");
+        exit();
+    } else {
+        // Tampilkan data dari database pada form saat halaman di-load
+        $sql = "SELECT * FROM penduduk WHERE nik={$nik}";
+        $data = $db->ambilOne($sql);
+    }
+    ?>
