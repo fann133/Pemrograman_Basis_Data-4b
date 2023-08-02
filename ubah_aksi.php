@@ -14,7 +14,7 @@
 
         // Lakukan query untuk menyimpan data ke database
         $sql = "UPDATE penduduk SET nama='$nama', tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', jenis_kelamin='$jenis_kelamin', agama='$agama' WHERE nik='$nik'";
-        $db->execute($sql);
+        $query = $db->aksiQuery($sql);
 
         // Redirect ke halaman index.php setelah berhasil menyimpan data
         header("Location: index.php");
