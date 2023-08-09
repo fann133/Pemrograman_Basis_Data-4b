@@ -6,6 +6,7 @@
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Proses form disubmit, simpan data ke database
+        $nik = $_POST['nik'];
         $nama = $_POST['nama'];
         $tempat_lahir = $_POST['tempat_lahir'];
         $tanggal_lahir = $_POST['tanggal_lahir'];
@@ -25,3 +26,5 @@
         $data = $db->ambilOne($sql);
     }
     ?>
+
+    
