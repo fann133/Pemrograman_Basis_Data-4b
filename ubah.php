@@ -19,7 +19,7 @@ $data = $db->ambilOne($sql);
                     <div class="form-group">
                         <label class="control-label col-sm-2">NIK :</label>
                         <div class="col-sm-4">
-                            <input class="form-control" type="number" name="nik" value="<?= $data['nik'] ?>" placeholder="Masukkan NIK"/>
+                            <input class="form-control" type="number" name="new_nik" value="<?= $data['nik'] ?>" placeholder="Masukkan NIK"/>
                         </div>
                     </div>
 
