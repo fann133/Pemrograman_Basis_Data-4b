@@ -26,14 +26,14 @@ $data = $db->ambilOne($sql);
                     <div class="form-group">
                         <label for="" class="control-label col-sm-2">Nama Lengkap :</label>
                         <div class="col-sm-4">
-                            <input class="form-control" type="text" name="nama" value="<?= $data['nama'] ?>" placeholder="Masukkan Nama Lengkap"/>
+                            <input class="form-control" type="text" name="nama" value="<?= $data['nama'] ?>" placeholder="Masukkan Nama Anda"/>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="" class="control-label col-sm-2">Tempat Lahir :</label>
                         <div class="col-sm-2">
-                            <input class="form-control" type="text" name="tempat_lahir" value="<?= $data['tempat_lahir'] ?>" placeholder="Isi nama"/>
+                            <input class="form-control" type="text" name="tempat_lahir" value="<?= $data['tempat_lahir'] ?>" placeholder="Masukkan Tempat"/>
                         </div> 
                     </div>
 
